@@ -1,0 +1,37 @@
+Update Anaconda
+-------------
+conda update -n base conda
+
+
+Create Environment
+--------------------------
+conda create --name llm-chatbot python=3.11
+
+Activate Environment
+-----------------------
+conda activate llm-chatbot
+
+Install Dependencies
+----------------------
+conda install snowflake-snowpark-python "openai>=1.0.0"
+conda install conda-forge::"streamlit>=1.28.2"
+
+Create streamlit folder
+--------------------------
+
+Add secrets in .streamlit/secrets.toml
+
+OPENAI_API_KEY = ""
+
+[connections.snowflake]
+user = ""
+password = ""
+warehouse = ""
+role = "ACCOUNTADMIN"
+account = ""
+
+Copy files from this 
+
+Connect to Snowflake and prepare views
+
+streamlit run SQLBOT.py
